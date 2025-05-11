@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Dueck Resume</title>
+    <link rel="manifest" href="data:application/manifest+json,{
+        'name': 'Jennifer Dueck Resume',
+        'short_name': 'Resume App',
+        'start_url': '.',
+        'display': 'standalone',
+        'background_color': '#ffffff',
+        'theme_color': '#ef4444',
+        'icons': [{'src': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAJ1JREFUWEftl0sKgCAQREf7/z+2S4zA1oCIWku7mc5gILM8f4GQt7AdgADAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAr8BGy4RMy8jfR4AAAAASUVORK5CYII=', 'sizes': '192x192', 'type': 'image/png'}]
+    }">
+    <style>
+        :root {
+            --primary: #ef4444;
+            --secondary: #b91c1c;
+            --background: linear-gradient(135deg, #fee2e2, #ffffff);
+            --text: #1a202c;
+            --glass-bg: rgba(255,255,255,0.1);
+            --glass-blur: blur(10px);
+            --gold-text: #d4af37;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: var(--background);
+            color: var(--text);
+        }
+        body.red {
+            --primary: #ef4444;
+            --secondary: #b91c1c;
+            --background: linear-gradient(135deg, #fee2e2, #ffffff);
+            --text: #1a202c;
+        }
+        body.green {
+            --primary: #10b981;
+            --secondary: #059669;
+            --background: linear-gradient(135deg, #d1fae5, #ffffff);
+            --text: #1a202c;
+        }
+        body.blue {
+            --primary: #3b82f6;
+            --secondary: #1d4ed8;
+            --background: linear-gradient(135deg, #dbeafe, #ffffff);
+            --text: #1a202c;
+        }
+        body.light {
+            --primary: #3b82f6;
+            --secondary: #1d4ed8;
+            --background: linear-gradient(135deg, #e0e7ff, #ffffff);
+            --text: #1a202c;
+            --glass-bg: rgba(255,255,255,0.2);
+            --glass-blur: blur(8px);
+        }
+        body.dark {
+            --primary: #93c5fd;
+            --secondary: #60a5fa;
+            --background: linear-gradient(135deg, #1f2937, #374151);
+            --text: #e2e8f0;
+            --glass-bg: rgba(0,0,0,0.2);
+            --glass-blur: blur(12px);
+        }
+        body.glass {
+            --primary: #d4af37;
+            --secondary: #b8972e;
+            --background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+            --text: var(--gold-text);
+            --glass-bg: rgba(255,255,255,0.15);
+            --glass-blur: blur(10px);
+        }
+        body.metallic {
+            --primary: #d4af37;
+            --secondary: #b8972e;
+            --background: linear-gradient(135deg, #1f2937, #374151);
+            --text: var(--gold-text);
+            --glass-bg: rgba(0,0,0,0.25);
+            --glass-blur: blur(10px);
+        }
+        body.simplified {
+            --primary: #000000;
+            --secondary: #000000;
+            --background: #ffffff;
+            --text: #000000;
+            --glass-bg: transparent;
+            --glass-blur: none;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+        }
+        body.simplified .container, body.simplified header, body.simplified nav, body.simplified section, body.simplified .modal-content, body.simplified .career-tabs {
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            padding: 10px;
+            margin: 0;
+            box-shadow: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        header {
+            text-align: center;
+            padding: 70px 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            border: 1px solid var(--primary);
+        }
+        header h1 {
+            font-size: 3.8rem;
+            color: var(--text);
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            padding: 25px 0;
+            z-index: 1000;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border: 1px solid var(--primary);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 30px;
+        }
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        section {
+            margin: 60px 0;
+            padding: 50px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 25px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            border: 1px solid var(--primary);
+        }
+        section h2 {
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+        .job, .skill, .accomplishment {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 5px solid var(--primary);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 10px;
+        }
+        .career-tabs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            border: 1px solid var(--primary);
+        }
+        .career-tabs button {
+            padding: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            color: var(--text);
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .career-tabs button.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--secondary);
+        }
+        .career-tabs button:hover {
+            background: var(--secondary);
+            color: #ffffff;
+        }
+        .additional-jobs {
+            display: none;
+            margin-top: 40px;
+        }
+        .additional-jobs.show {
+            display: block;
+        }
+        .additional-toggle {
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: 700;
+            margin-top: 25px;
+        }
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .theme-selector, .theme-toggle, .pdf-button, .cover-letter-button, .simplified-toggle, .print-button {
+            padding: 10px 20px;
+            background: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        .modal-content {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            color: var(--text);
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 700px;
+            width: 90%;
+            border: 1px solid var(--primary);
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.8rem; }
+            nav ul { flex-direction: column; align-items: center; }
+            nav ul li { margin: 12px 0; }
+            section { padding: 30px; }
+            .career-tabs { grid-template-columns: 1fr; }
+            .button-container {
+                bottom: 10px;
+                right: 10px;
+                gap: 8px;
+            }
+        }
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .container, header, nav, section, .career-tabs, .job, .modal-content {
+                background: none !important;
+                backdrop-filter: none !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+            .button-container, .modal, .additional-toggle {
+                display: none !important;
+            }
+            .additional-jobs.show {
+                display: block !important;
+            }
+            h1, h2, h3, p, li {
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+<body class="red">
+    <!-- PASTE NEW RESUME JSON HERE -->
+    <script>
+        const resumeData = {
+            "name": "Jennifer Dueck",
+            "contact": "Spruce View, Alberta T0M 1V0|(403) 597-8649|jenniferllavanes@gmail.com",
+            "education": [
+                {
+                    "institution": "TESDA",
+                    "location": "Minalabac, Philippines",
+                    "degree": "Farm Mechanization",
+                    "date": "2021 – 2022"
+                },
+                {
+                    "institution": "Datamex Institute",
+                    "location": "Naga City, Philippines",
+                    "degree": "Automated Office System",
+                    "date": "2008 – 2010"
+                },
+                {
+                    "institution": "Minalabac National High School",
+                    "location": "Minalabac, Philippines",
+                    "degree": "Secondary Education",
+                    "date": "2003 – 2007"
+                }
+            ],
+            "jobs": [
+                {
+                    "title": "Team Member",
+                    "company": "Tim Hortons",
+                    "location": "Innisfail, AB, Canada",
+                    "start_date": "Jan 2025",
+                    "end_date": "Present",
+                    "description": "Delivered excellent customer service in a high-volume setting, processing orders accurately. Prepared food and beverages, adhering to hygiene standards. Maintained a clean, organized workspace during peak hours.",
+                    "career_path": "food-service"
+                },
+                {
+                    "title": "Team Leader / Trainer / Cook / Cashier",
+                    "company": "Atlantic Bakeshop",
+                    "location": "Naga City, Philippines",
+                    "start_date": "Jan 2013",
+                    "end_date": "Dec 2014",
+                    "description": "Led team to ensure high-quality service and efficient operations. Trained staff on service, food prep, and POS systems. Managed cashier duties and assisted in food preparation.",
+                    "career_path": "food-service"
+                },
+                {
+                    "title": "Team Leader / Trainer / Cook / Cashier",
+                    "company": "Jose B. Rich Food",
+                    "location": "Manila, Philippines",
+                    "start_date": "Jan 2012",
+                    "end_date": "Dec 2013",
+                    "description": "Supervised and trained staff to maintain service standards. Handled cash transactions and resolved customer inquiries. Supported kitchen with food preparation and cleanliness.",
+                    "career_path": "food-service"
+                },
+                {
+                    "title": "Cashier",
+                    "company": "Robertson Department Store",
+                    "location": "Naga City, Philippines",
+                    "start_date": "Jan 2011",
+                    "end_date": "Dec 2012",
+                    "description": "Processed transactions accurately in a high-volume setting. Managed customer inquiries with multitasking skills.",
+                    "career_path": "retail"
+                },
+                {
+                    "title": "Cashier",
+                    "company": "Cabral Bicolandia Supermart",
+                    "location": "Naga City, Philippines",
+                    "start_date": "Jan 2010",
+                    "end_date": "Dec 2011",
+                    "description": "Operated cash register with speed and accuracy. Ensured positive customer experience in a busy setting.",
+                    "career_path": "retail"
+                },
+                {
+                    "title": "Owner",
+                    "company": "Rice Farm & Hog Farm",
+                    "location": "Camarines Sur, Philippines",
+                    "start_date": "Jan 2017",
+                    "end_date": "Dec 2024",
+                    "description": "Managed operations with strong organizational skills.",
+                    "career_path": "agriculture-domestic"
+                },
+                {
+                    "title": "Domestic Helper",
+                    "company": "Private Household",
+                    "location": "Kuala Lumpur, Malaysia",
+                    "start_date": "Jan 2014",
+                    "end_date": "Dec 2017",
+                    "description": "Handled diverse tasks with flexibility and reliability.",
+                    "career_path": "agriculture-domestic"
+                }
+            ],
+            "skills": [
+                "Customer Service Excellence",
+                "Team Leadership & Training",
+                "Time Management",
+                "Food Preparation & Safety",
+                "Cash Handling & POS",
+                "Flexibility & Multitasking"
+            ],
+            "accomplishments": [
+                "Proficient in food safety standards",
+                "Strong team and independent worker",
+                "Committed to excellent customer experience"
+            ],
+            "settings": {
+                "color_scheme": "red",
+                "organization": "career_path",
+                "display_mode": "full_info"
+            }
+        };
+    </script>
+    <div class="container">
+        <header id="home"></header>
+        <nav>
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#accomplishments">Accomplishments</a></li>
+            </ul>
+        </nav>
+        <section id="summary"></section>
+        <section id="experience"></section>
+        <section id="education"></section>
+        <section id="skills"></section>
+        <section id="accomplishments"></section>
+    </div>
+    <div class="button-container">
+        <select class="theme-selector" onchange="selectTheme(this.value)">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="glass">Glass</option>
+            <option value="metallic">Metallic</option>
+        </select>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</button>
+        <button class="pdf-button" onclick="downloadPDF()">Download PDF</button>
+        <button class="print-button" onclick="printResume()">Print Resume</button>
+        <button class="cover-letter-button" onclick="openModal()">View Cover Letter</button>
+        <button class="simplified-toggle" onclick="toggleSimplified()">Simplified View</button>
+    </div>
+    <div class="modal" id="coverLetterModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Cover Letter</h2>
+            <p id="coverLetterContent"></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Configuration
+        const careerPaths = {
+            'food-service': { label: 'Food Service', summary: 'Skilled in delivering exceptional customer service and managing food service operations.' },
+            retail: { label: 'Retail', summary: 'Experienced in high-volume retail transactions and customer engagement.' },
+            'agriculture-domestic': { label: 'Agriculture & Domestic', summary: 'Proficient in managing operations and handling diverse tasks.' }
+        };
+        let currentTheme = resumeData.settings.color_scheme;
+
+        // Load and Render Resume
+        function renderResume(data) {
+            const { name, contact, education, jobs, skills, accomplishments, settings } = data;
+            const { organization, display_mode } = settings;
+
+            // Apply Theme
+            applyTheme(currentTheme);
+
+            // Header
+            document.getElementById('home').innerHTML = `
+                <h1>${name}</h1>
+                <p>${contact.replace(/\|/g, ' | ')}</p>
+            `;
+
+            // Summary
+            const defaultSummary = organization === 'career_path' ? careerPaths[jobs[0].career_path]?.summary || 'Customer-focused professional' : 'Versatile professional with diverse experience';
+            document.getElementById('summary').innerHTML = `<h2>Professional Summary</h2><p>${defaultSummary}</p>`;
+
+            // Experience
+            let experienceHTML = '';
+            if (organization === 'career_path') {
+                experienceHTML = `
+                    <h2>Career Path</h2>
+                    <div class="career-tabs">
+                        ${Object.keys(careerPaths).map(path => `<button class="career-tab${path === jobs[0].career_path ? ' active' : ''}" data-path="${path}">${careerPaths[path].label}</button>`).join('')}
+                    </div>
+                    <div id="relevant-experience">
+                        <h2>Relevant Work Experience (${careerPaths[jobs[0].career_path]?.label})</h2>
+                        ${jobs.filter(job => job.career_path === jobs[0].career_path).map(job => `
+                            <div class="job" data-career="${job.career_path}">
+                                <h3>${job.title} – ${job.company}, ${job.location}</h3>
+                                <p>${job.start_date} – ${job.end_date}</p>
+                                ${display_mode === 'full_info' ? `<p>${job.description}</p>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <p class="additional-toggle" onclick="toggleAdditional()">View Additional Experience</p>
+                    <div class="additional-jobs" id="additionalJobs">
+                        ${jobs.filter(job => job.career_path !== jobs[0].career_path).map(job => `
+                            <div class="job" data-career="${job.career_path}">
+                                <h3>${job.title} – ${job.company}, ${job.location}</h3>
+                                <p>${job.start_date} – ${job.end_date}</p>
+                                ${display_mode === 'full_info' ? `<p>${job.description}</p>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+52.116887,-114.262358https://drive.google.com/file/d/1dRQcHA4Kyx-9kD04FYlGYoDsr2fRmXjq/view?usp=drivesdkhttps://drive.google.com/file/d/1dRQcHA4Kyx-9kD04FYlGYoDsr2fRmXjq/view?usp=drivesdk                experienceHTML = `
+                    <h2>Work Experience</h2>
+                    ${jobs.sort((a, b) => new Date(b.start_date) - new Date(a.start_date)).map(job => `
+                        <div class="job">
+                            <h3>${job.title} – ${job.company}, ${job.location}</h3>
+                            <p>${job.start_date} – ${job.end_date}</p>
+                            ${display_mode === 'full_info' ? `<p>${job.description}</p>` : ''}
+                        </div>
+                    `).join('')}
+                `;
+            }
+            document.getElementById('experience').innerHTML = experienceHTML;
+
+            // Education
+            document.getElementById('education').innerHTML = `
+                <h2>Education</h2>
+                ${education.map(edu => `
+                    <p><strong>${edu.institution}, ${edu.location}</strong> – ${edu.degree}, ${edu.date}</p>
+                `).join('')}
+            `;
+
+            // Skills
+            document.getElementById('skills').innerHTML = `
+                <h2>Skills</h2>
+                <ul>${skills.map(skill => `<li class="skill">${skill}</li>`).join('')}</ul>
+            `;
+
+            // Accomplishments
+            document.getElementById('accomplishments').innerHTML = `
+                <h2>Accomplishments</h2>
+                <ul>${accomplishments.map(item => `<li class="accomplishment">${item}</li>`).join('')}</ul>
+            `;
+
+            // Cover Letter
+            document.getElementById('coverLetterContent').innerHTML = `
+                Dear Hiring Manager,<br><br>
+                I am excited to apply for a role at Tivilies in Spruce View, bringing my expertise in ${skills[0].toLowerCase()}. My experience includes delivering exceptional service at Tim Hortons and leading teams at Atlantic Bakeshop to ensure efficient operations. I am eager to contribute to your team.<br><br>
+                With a background in food service and retail across Canada and the Philippines, I have honed my adaptability and multitasking skills. My commitment to customer satisfaction and team collaboration drives my passion for excellence.<br><br>
+                Thank you for considering my application.<br><br>
+                Sincerely,<br>${name}
+            `;
+
+            // Career Path Switching
+            if (organization === 'career_path') {
+                const tabs = document.querySelectorAll('.career-tab');
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        tabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        const path = tab.dataset.path;
+                        document.getElementById('relevant-experience').innerHTML = `
+                            <h2>Relevant Work Experience (${careerPaths[path].label})</h2>
+                            ${jobs.filter(job => job.career_path === path).map(job => `
+                                <div class="job" data-career="${job.career_path}">
+                                    <h3>${job.title} – ${job.company}, ${job.location}</h3>
+                                    <p>${job.start_date} – ${job.end_date}</p>
+                                    ${display_mode === 'full_info' ? `<p>${job.description}</p>` : ''}
+                                </div>
+                            `).join('')}
+                        `;
+                        document.getElementById('summary').innerHTML = `<h2>Professional Summary</h2><p>${careerPaths[path].summary}</p>`;
+                    });
+                });
+            }
+        }
+
+        // Theme Management
+        function applyTheme(theme) {
+            const themes = {
+                red: { 
+                    primary: '#ef4444', 
+                    secondary: '#b91c1c', 
+                    background: 'linear-gradient(135deg, #fee2e2, #ffffff)', 
+                    text: '#1a202c', 
+                    glassBg: 'rgba(255,255,255,0.1)', 
+                    glassBlur: 'blur(10px)' 
+                },
+                green: { 
+                    primary: '#10b981', 
+                    secondary: '#059669', 
+                    background: 'linear-gradient(135deg, #d1fae5, #ffffff)', 
+                    text: '#1a202c', 
+                    glassBg: 'rgba(255,255,255,0.1)', 
+                    glassBlur: 'blur(10px)' 
+                },
+                blue: { 
+                    primary: '#3b82f6', 
+                    secondary: '#1d4ed8', 
+                    background: 'linear-gradient(135deg, #dbeafe, #ffffff)', 
+                    text: '#1a202c', 
+                    glassBg: 'rgba(255,255,255,0.1)', 
+                    glassBlur: 'blur(10px)' 
+                },
+                light: { 
+                    primary: '#3b82f6', 
+                    secondary: '#1d4ed8', 
+                    background: 'linear-gradient(135deg, #e0e7ff, #ffffff)', 
+                    text: '#1a202c', 
+                    glassBg: 'rgba(255,255,255,0.2)', 
+                    glassBlur: 'blur(8px)' 
+                },
+                dark: { 
+                    primary: '#93c5fd', 
+                    secondary: '#60a5fa', 
+                    background: 'linear-gradient(135deg, #1f2937, #374151)', 
+                    text: '#e2e8f0', 
+                    glassBg: 'rgba(0,0,0,0.2)', 
+                    glassBlur: 'blur(12px)' 
+                },
+                glass: { 
+                    primary: '#d4af37', 
+                    secondary: '#b8972e', 
+                    background: 'linear-gradient(135deg, #e5e7eb, #d1d5db)', 
+                    text: '#d4af37', 
+                    glassBg: 'rgba(255,255,255,0.15)', 
+                    glassBlur: 'blur(10px)' 
+                },
+                metallic: { 
+                    primary: '#d4af37', 
+                    secondary: '#b8972e', 
+                    background: 'linear-gradient(135deg, #1f2937, #374151)', 
+                    text: '#d4af37', 
+                    glassBg: 'rgba(0,0,0,0.25)', 
+                    glassBlur: 'blur(10px)' 
+                }
+            };
+            const selectedTheme = themes[theme] || themes.red;
+            document.documentElement.style.setProperty('--primary', selectedTheme.primary);
+            document.documentElement.style.setProperty('--secondary', selectedTheme.secondary);
+            document.documentElement.style.setProperty('--background', selectedTheme.background);
+            document.documentElement.style.setProperty('--text', selectedTheme.text);
+            document.documentElement.style.setProperty('--glass-bg', selectedTheme.glassBg);
+            document.documentElement.style.setProperty('--glass-blur', selectedTheme.glassBlur);
+            document.body.classList.remove('red', 'green', 'blue', 'light', 'dark', 'glass', 'metallic', 'simplified');
+            document.body.classList.add(theme);
+            currentTheme = theme;
+            localStorage.setItem('theme', theme);
+            document.querySelector('.theme-selector').value = theme;
+        }
+
+        function selectTheme(theme) {
+            applyTheme(theme);
+            resumeData.settings.color_scheme = theme;
+            renderResume(resumeData);
+        }
+
+        function toggleTheme() {
+            const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+            selectTheme(nextTheme);
+        }
+
+        // Simplified View
+        function toggleSimplified() {
+            if (document.body.classList.contains('simplified')) {
+                document.body.classList.remove('simplified');
+                applyTheme(currentTheme);
+            } else {
+                document.body.classList.remove('red', 'green', 'blue', 'light', 'dark', 'glass', 'metallic');
+                document.body.classList.add('simplified');
+            }
+        }
+
+        // Modal
+        function openModal() {
+            document.getElementById('coverLetterModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('coverLetterModal').style.display = 'none';
+        }
+
+        // PDF Download
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+
+            // Header
+            doc.setFontSize(20);
+            doc.setTextColor(currentTheme === 'metallic' || currentTheme === 'glass' ? 212, 175, 55 : 0, 0, 0);
+            doc.text('Resume', 10, y);
+            y += 10;
+
+            // Contact
+            doc.setFontSize(12);
+            doc.text(resumeData.name, 10, y);
+            y += 5;
+            doc.text(resumeData.contact.replace(/\|/g, ' | '), 10, y);
+            y += 10;
+
+            // Summary
+            doc.text('Summary', 10, y);
+            y += 5;
+            const summaryLines = doc.splitTextToSize(document.querySelector('#summary p').textContent, 180);
+            doc.text(summaryLines, 10, y);
+            y += summaryLines.length * 5 + 10;
+
+            // Experience
+            doc.text('Experience', 10, y);
+            y += 5;
+            const jobs = resumeData.settings.organization === 'career_path' ?
+                resumeData.jobs.filter(job => job.career_path === resumeData.jobs[0].career_path) :
+                resumeData.jobs.sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+            jobs.forEach(job => {
+                doc.text(`${job.title} – ${job.company}, ${job.location}`, 10, y);
+                y += 5;
+                doc.text(`${job.start_date} – ${job.end_date}`, 10, y);
+                y += 5;
+                if (resumeData.settings.display_mode === 'full_info') {
+                    const descLines = doc.splitTextToSize(job.description, 180);
+                    doc.text(descLines, 10, y);
+                    y += descLines.length * 5 + 5;
+                } else {
+                    y += 5;
+                }
+            });
+
+            // Education
+            doc.text('Education', 10, y);
+            y += 5;
+            resumeData.education.forEach(edu => {
+                const eduText = `${edu.institution}, ${edu.location} – ${edu.degree}, ${edu.date}`;
+                const eduLines = doc.splitTextToSize(eduText, 180);
+                doc.text(eduLines, 10, y);
+                y += eduLines.length * 5 + 5;
+            });
+
+            doc.save(`${resumeData.name.replace(/\s+/g, '_')}_Resume.pdf`);
+        }
+
+        // Print Resume
+        function printResume() {
+            window.print();
+        }
+
+        // Toggle Additional Jobs
+        function toggleAdditional() {
+            const additionalJobs = document.getElementById('additionalJobs');
+            additionalJobs.classList.toggle('show');
+            const toggleText = document.querySelector('.additional-toggle');
+            toggleText.textContent = additionalJobs.classList.contains('show') ? 'Hide Additional Experience' : 'View Additional Experience';
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Load Theme
+        const savedTheme = localStorage.getItem('theme') || 'red';
+        applyTheme(savedTheme);
+
+        // Initialize
+        renderResume(resumeData);
+
+        // Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+    <script>
+        // Inline Service Worker
+        self.addEventListener('install', e => {
+            e.waitUntil(caches.open('resume-cache').then(cache => {
+                return cache.addAll(['index.html', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js']);
+            }));
+        });
+        self.addEventListener('fetch', e => {
+            e.respondWith(caches.match(e.request).then(response => response || fetch(e.request)));
+        });
+    </script>
+</body>
+</html>
